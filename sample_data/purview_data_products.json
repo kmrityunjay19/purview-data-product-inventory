@@ -1,0 +1,27 @@
+{
+  "domains": [
+    {"domain_key": "FIN", "domain_name": "Finance", "owner": "finance.data.owner@example.org"},
+    {"domain_key": "OPS", "domain_name": "Operations", "owner": "operations.data.owner@example.org"}
+  ],
+  "glossary_terms": [
+    {"term_key": "G001", "term_name": "Net Revenue", "definition": "Revenue after approved deductions."},
+    {"term_key": "G002", "term_name": "Service Availability", "definition": "Percentage of planned operating time delivered."}
+  ],
+  "data_products": [
+    {
+      "product_key": "DP001", "domain_key": "FIN", "product_name": "Financial Performance", "description": "Certified financial performance measures for planning and reporting.",
+      "owner": "finance.data.owner@example.org", "purview_url": "https://purview.example.org/data-products/DP001", "powerbi_app_url": "https://app.powerbi.com/groups/example/apps/finance", "quality_report_url": "https://app.powerbi.com/groups/example/reports/finance-quality", "quality_score": 96,
+      "terms": ["G001"], "assets": ["gold.finance_monthly_performance", "finance_semantic_model"]
+    },
+    {
+      "product_key": "DP002", "domain_key": "OPS", "product_name": "Operations Reliability", "description": "Curated operational reliability metrics for service teams.",
+      "owner": "operations.data.owner@example.org", "purview_url": "https://purview.example.org/data-products/DP002", "powerbi_app_url": "https://app.powerbi.com/groups/example/apps/operations", "quality_report_url": "https://app.powerbi.com/groups/example/reports/operations-quality", "quality_score": 91,
+      "terms": ["G002"], "assets": ["gold.operations_reliability", "operations_semantic_model"]
+    }
+  ],
+  "user_domain_entitlements": [
+    {"user_principal_name": "alex.consumer@example.org", "domain_key": "FIN"},
+    {"user_principal_name": "sam.analyst@example.org", "domain_key": "FIN"},
+    {"user_principal_name": "sam.analyst@example.org", "domain_key": "OPS"}
+  ]
+}
